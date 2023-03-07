@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "5126322f-633f-430b-a748-b1e3a88fdbf0",
+		"name": "spring-security",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4965264"
+	},
+	"item": [
+		{
+			"name": "JWT : generate-token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"praveen\",\r\n    \"password\":\"password\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8081/authenticate",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JWT : get-request",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcmF2ZWVuIiwiZXhwIjoxNjc4MDM2OTM1LCJpYXQiOjE2NzgwMTg5MzV9.mYPUuSuifD2jFke90K3z_j7HVuWC7acfTqVZ0l-6_Dw9AzYaSz-yUEtt59xij2UeEeLNMH7iLJggtY7QO4bh3A",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8081/employees/",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"employees",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JWT With Postgres : register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstname\" : \"Praveen\",\r\n    \"lastname\" : \"Singh\",\r\n    \"email\" : \"praveen.singh@gmail.com\",\r\n    \"password\" : \"praveen.199\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/auth/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JWT With Postgres : authenticate",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmF2ZWVuLnNpbmdoQGdtYWlsLmNvbSIsImlhdCI6MTY3ODE1MjU3MiwiZXhwIjoxNjc4MTU0MDEyfQ.yWxOUwGgMVo4KvIaSa2-LVq2tWqPqhhLe2N3p6ujqVQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"praveen.singh@gmail.com\",\r\n    \"password\" : \"praveen.199\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/auth/authenticate",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JWT With Postgres : get",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcmF2ZWVuLnNpbmdoQGdtYWlsLmNvbSIsImlhdCI6MTY3ODE1MjU5NiwiZXhwIjoxNjc4MTU0MDM2fQ.akmya2AoHPljT7kXV-mHiS8SQZamvkR183-HtAKa7kk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/api/v1/demo-controller",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"demo-controller"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
