@@ -1,9 +1,8 @@
 {
 	"info": {
-		"_postman_id": "0ea676f5-f5e8-4f13-9a97-615a17786d00",
+		"_postman_id": "abca6dc3-531a-4f77-b0c0-d180c8aed286",
 		"name": "spring-security",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "4965264"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
@@ -182,7 +181,7 @@
 			"response": []
 		},
 		{
-			"name": "auth-token-in-memory-user-role",
+			"name": "auth-token-in-memory-admin-role",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -247,7 +246,7 @@
 			"response": []
 		},
 		{
-			"name": "auth-token-in-memory-admin-role",
+			"name": "auth-token-in-memory-user-role",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -321,12 +320,12 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "bearer bf27aaf1-21e7-46d2-9ef7-bf958712b099",
+						"value": "Bearer 1ba3bce6-86a9-4b5c-9215-d8a50367e475",
 						"type": "default"
 					}
 				],
 				"url": {
-					"raw": "localhost:9091/couponapi/coupons/Low",
+					"raw": "localhost:9091/couponapi/coupons/sale",
 					"host": [
 						"localhost"
 					],
@@ -334,7 +333,7 @@
 					"path": [
 						"couponapi",
 						"coupons",
-						"Low"
+						"sale"
 					]
 				}
 			},
@@ -350,13 +349,13 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer e3507e1b-f703-47a5-abfa-6af3961772ff",
+						"value": "Bearer 60dc62c7-2566-4343-96ac-3c5254daa399",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"code\"  : \"Low Proice\",\r\n    \"discount\" : 50,\r\n    \"expDate\" : \"LOW\"\r\n}",
+					"raw": "{\r\n    \"code\"  : \"sale\",\r\n    \"discount\" : 10,\r\n    \"expDate\" : \"SUPERSALE\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
